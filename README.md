@@ -19,7 +19,7 @@
 
 * 查看单词列表和单词详情的功能。
 > curl localhost:3000/books/1/words.json<br/>
-> curl localhost:3000/words/1.json
+> curl localhost:3000/words/1.json (默认不附带用户是否已掌握该单词的字段，除非访问接口时附带token验证出用户已登陆)
 
 * 把单词变成未掌握或已掌握的功能。
 > curl -d '{"status": "1", "token": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MTEyOTUwOTcsInVzZXJfaWQiOjJ9.2A85p2wmhwSb7I25ii-7--go6OBzju2X1Dxg8WV9zIU"}' -H "Content-Type: application/json" -X POST localhost:3000/words/1/mark

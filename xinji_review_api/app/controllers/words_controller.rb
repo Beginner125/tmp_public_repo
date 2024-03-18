@@ -5,6 +5,10 @@ class WordsController < ApplicationController
         @words = Book.find(params[:book_id]).words.page(params[:page]).per(params[:per]).decorate
     end
 
+    def show
+        @mark = @word.marks.find_by(user: @current_user)&.decorate
+    end
+
     private
 
     def set_word
