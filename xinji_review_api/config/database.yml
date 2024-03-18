@@ -1,0 +1,23 @@
+mysql2:
+  strict: true
+
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: root
+  password: 2016156202
+  host: 127.0.0.1
+
+development:
+  <<: *default
+  database: mini_web_development
+
+test:
+  <<: *default
+  database: mini_web_test
+
+production:
+  <<: *default
+  database: mini_web_production

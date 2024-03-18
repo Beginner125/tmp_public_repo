@@ -1,0 +1,1 @@
+json.(@word, :id, :en, :zh, :details)

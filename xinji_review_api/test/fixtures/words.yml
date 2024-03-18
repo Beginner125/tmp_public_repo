@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+<% """减轻，废除;abate
+抽象，摘要;abstraction
+滥用;abuse
+加速器;accelerator
+易接近的;accessible
+会计;accountant
+正确的;accurate
+首字母缩略字;acronym
+激活;activate
+足够的;adequate""".split("\n").each_with_index do |row, index| %>
+word_<%=index %>:
+  en: <%=row.split(";")[0]>
+  zh: <%=row.split(";")[1]>
+<% end %>
