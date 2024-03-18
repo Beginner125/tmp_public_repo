@@ -2,7 +2,9 @@ class WordsController < ApplicationController
     before_action :set_word, only: [:show]
 
     def index
-        @words = Book.find(params[:book_id]).words.left_joins(:marks).distinct.page(params[:page]).per(params[:per]).decorate
+        @words = Book.find(params[:book_id]).words.includes(:marks).joins("""
+            LEFT OUTER JOIN (#{Mark.where(markable_type: Word, user: @current_user).to_sql}) AS marks ON marks.markable_id = words.id
+        """).distinct.page(params[:page]).per(params[:per]).decorate
     end
 
     def show
