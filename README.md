@@ -18,7 +18,7 @@
 > curl localhost:3000/books.json
 
 * 查看单词列表和单词详情的功能。
-> curl localhost:3000/books/1/words.json
+> curl localhost:3000/books/1/words.json<br/>
 > curl localhost:3000/words/1.json
 
 * 把单词变成未掌握或已掌握的功能。
