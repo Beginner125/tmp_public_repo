@@ -1,2 +1,2 @@
-json.(@word, :id, :en, :zh, :details)
-json.mark_status @mark.status if @mark
+json.partial! 'words/word', word: @word
+json.details @word.details
